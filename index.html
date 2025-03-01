@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub 文件加速</title>
+    <style>
+        /* 添加您的CSS样式 */
+        html, body {
+            width: 100%;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .url {
+            font-size: 18px;
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-bottom: 1px solid #bfbfbf;
+        }
+        .btn {
+            background-color: #00bfb3;
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toSubmit(e) {
+            e.preventDefault();
+            const url = document.getElementsByName('q')[0].value;
+            window.open(location.href + 'proxy?q=' + encodeURIComponent(url));
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>GitHub 文件加速</h1>
+    <form onsubmit="toSubmit(event)">
+        <input class="url" name="q" type="text" placeholder="键入Github文件链接" required>
+        <input class="btn" type="submit" value="下载">
+    </form>
+</body>
+</html>
